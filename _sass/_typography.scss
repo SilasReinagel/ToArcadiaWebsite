@@ -1,0 +1,35 @@
+html {
+  font-size: $base-font-size;
+}
+
+abbr {
+  border-bottom: $abbr-border-bottom;
+  cursor: help;
+}
+
+p {
+  color: $site-color;
+  line-height: 1.5;
+}
+
+small,
+.small {
+  font-size: 0.707rem;
+}
+
+strong,
+.strong {
+   font-weight: 500;
+}
+
+sup {
+  position: relative;
+  vertical-align: middle;
+  top: -0.9ex;
+}
+
+@font-face {
+	font-family: 'HARRINGT';
+	src: url('/fonts/HARRINGT.eot');
+	src: local('/fonts/HARRINGT'), url('/fonts/HARRINGT.woff') format('woff'), url('/fonts/HARRINGT.ttf') format('truetype');
+}

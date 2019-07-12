@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  background: $site-bg-color no-repeat center center fixed;
+  background-image: linear-gradient(down, #1ec0ec, #277e24);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+em img {
+  max-width: 100%;
+  margin-left: 0;
+}
+
+body {
+          box-sizing: border-box;
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}

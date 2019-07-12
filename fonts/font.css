@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'HARRINGT';
+	src: url('./HARRINGT.eot');
+	src: local('HARRINGT'), url('./HARRINGT.woff') format('woff'), url('./HARRINGT.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_1090">Text with this font applied</p> */
+.fontsforweb_fontid_1090 {
+	font-family: 'HARRINGT' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
