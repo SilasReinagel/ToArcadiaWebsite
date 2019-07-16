@@ -12,3 +12,13 @@
   background-image: url('/images/bg/Arcadia-1920x1280.jpg') !important;
   background-size: cover;
 }
+
+.character-left img {
+  display: float;
+  position: absolute;
+  left: 3vw;
+  bottom: 1.5vh;
+  max-height: 60vh;
+  height: 60vh;
+  margin-bottom: 0px;
+}

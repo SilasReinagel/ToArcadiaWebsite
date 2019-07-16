@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "To Arcadia - Creation Blog"
+title: "Creation Blog"
 permalink: blog.html
 ---
 

@@ -1,0 +1,227 @@
+$bg: #333;
+$fg: #f9f9f9;
+$max-width-small: 959px;
+$min-width-large: 960px;
+
+/**
+ * Basic styling and reset.
+ */
+.cf:after, .cf:before {
+    display: block;
+    content: '';
+    clear: both;
+}
+body {
+    margin: 0;
+}
+#player-wrapper {
+  font-family: sans;
+}
+#player-wrapper ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0 10px;
+    display: none;
+}
+
+/**
+ * Styles shared between large and small devices.
+ */
+#player {
+    background-color: $bg;
+    color: $fg;
+    position: relative;
+    .play-pause, .gutter, .volume {
+        cursor: pointer;
+        display: inline-block;
+        height: 36px;
+        position: absolute;
+    }
+    .play-pause {
+        left: 0;
+        background: center/36px no-repeat url(images/pause-circle-fill.svg);
+    }
+    .paused {
+        background: center/36px no-repeat url(images/play-circle-fill.svg);
+    }
+    .handler {
+    }
+    .volume {
+        right: 0;
+        background: center/36px no-repeat url(images/vol-up.svg);
+        &.vol-up {
+            background: center/36px no-repeat url(images/vol-up.svg);
+        }
+        &.vol-half {
+            background: center/36px no-repeat url(images/vol-half.svg);
+        }
+        &.vol-low {
+            background: center/36px no-repeat url(images/vol-low.svg);
+        }
+        &.vol-off {
+            background: center/36px no-repeat url(images/vol-off.svg);
+        }
+    }
+    .controls-wrapper {
+        height: 36px;
+        .handler {
+            height: 16px;
+            width: 16px;
+            margin-left: -8px;
+        }
+    }
+    .gutter {
+        background-color: #333;
+        height: 14px;
+        top: 11px;
+        border-radius: 3px;
+    }
+    .handler {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.65);
+        border-radius: 8px;
+        top: -1px;
+    }
+    .fill {
+        height: 4px;
+        background-color: #555;
+        width: 100%;
+        display: block;
+        margin-top: 5px;
+        border-radius: 2px;
+    }
+    .playlist {
+        background-color: #444;
+    }
+    li {
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid #333;
+    }
+    li:first-of-type {
+    }
+    li {
+        background: #444 8px center/0px url(images/music-note1.svg) no-repeat;
+        transition: all 0.2s linear 0s;
+    }
+    li:hover, li.active {
+        background: #333 8px center/20px url(images/music-note.svg) no-repeat;
+        padding-left: 30px;
+    }
+    .open + .playlist {
+        margin-top: 0;
+    }
+    .closed + .playlist {
+        margin-top: 36px;
+    }
+
+    .v-gutter-wrap {
+        position: absolute;
+        width: 250px;
+        height: 22px;
+        background-color: #2c2c2c;
+        top: 36px;
+        right: 10px;
+        z-index: 1;
+        border-radius: 2px;
+        display: none;
+    }
+    .v-gutter {
+        height: 22px;
+        width: 80%;
+        margin: 0 auto 0 auto;
+    }
+    .v-fill {
+        position: relative;
+        top: 9px;
+        height: 4px;
+        background-color: #555;
+        display: block;
+        border-radius: 2px;
+    }
+    .v-handler {
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        margin-left: -8px;
+        background-color: rgba(0, 0, 0, 0.65);
+        border-radius: 8px;
+        top: -6px;
+      }
+
+
+    #open-close-playlist {
+        position: absolute;
+        height: 36px;
+        width: 100%;
+        cursor: pointer;
+    }
+    #open-close-playlist.closed {
+        background: #444 url(images/arrow-down.svg) no-repeat center center;
+        top: 36px;
+    }
+    #open-close-playlist.open {
+        background: #444 url(images/arrow-up.svg) no-repeat center center;
+        bottom: -36px;
+    }
+}
+
+
+@mixin mediq-query-small($width) {
+    @media screen and (max-width: $max-width-small) {
+        @content;
+    }
+}
+
+@mixin media-query-large($width) {
+    @media screen and (min-width: $min-width-large) {
+        @content;
+    }
+}
+
+/**
+ * Styles for small devices.
+ */
+@media screen and (max-width: $max-width-small) {
+    #player {
+        width: 100%;
+
+        .play-pause { width: 20%; }
+        .gutter { width: 60%; left: 20%; }
+        .volume { width: 20%; }
+
+        .gutter {
+        }
+    }
+}
+
+/**
+ * Style for medium-sized devices.
+ */
+@media screen and (min-width: 700px) {
+    #player {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/**
+ * Styles for large devices.
+ */
+@media screen and (min-width: $min-width-large) {
+    #player {
+        width: 800px;
+        margin: 0 auto;
+
+        .play-pause { width: 60px; }
+        .gutter { width: 800px - 120px; left: 60px; }
+        .volume { width: 60px; }
+
+        .gutter {
+            .handler {
+            }
+        }
+        .v-gutter {
+        }
+    }
+}

@@ -1,12 +1,20 @@
 .card {
-  border-color: $lighter-gray;
-  border-width: 2px;
-  border-style: solid;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-width: 0px;
   transition: 0.2s;
   margin: 1em;
+  padding: 0.8em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.white-bg {
+  background-color: $transparent-white;
+  box-shadow: 0 4px 8px 0 $shadow;
+}
+
+img {
+  max-width: 50vw;
+  max-height: 40vh;
+  margin: 1em auto;
 }

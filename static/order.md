@@ -1,5 +1,5 @@
 ---
 layout: default
-title: "To Arcadia - Pre-Order"
-permalink: blog.html
+title: "Pre-Order"
+permalink: order.html
 ---

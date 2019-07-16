@@ -12,7 +12,7 @@ $script-font-family: 'coquette', 'Lato', 'Helvetica Neue', Helvetica, sans-serif
 $script-font-weight: 400 !default;
 $monospace-font-family: 'Source Code Pro', Consolas, monospace !default;
 $h1: 2.1rem !default;
-$h2: 1.75rem !default;
+$h2: 1.8rem !default;
 $h3: 1.5rem !default;
 $h4: 1rem !default;
 $h5: .875rem !default;
@@ -41,6 +41,7 @@ $site-color-shadow: #1f1f1f;
 $inner-color: $site-color;
 $site-bg-color: #1ec0ec;
 $inner-bg-color: #cdcdcd;
+$shadow: rgba(0,0,0,0.4);
 
 // Colors
 $blue: #0076df !default;
@@ -63,6 +64,7 @@ $darken-2: rgba(#000,.125) !default;
 $darken-3: rgba(#000,.25) !default;
 $darken-4: rgba(#000,.5) !default;
 $transparent-white: rgba(#fff, .75) !default;
+$transparent: rgba(#fff, 0) !default;
 
 // Links
 $link-color: $site-color;

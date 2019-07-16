@@ -22,6 +22,12 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl }}" />
 
+    {% if page.audio ||= false %}
+    <!-- Audio Player-->
+    <script src="/js/audioplayer.js"></script>
+    <script src="/js/main.js"></script>  
+    {% endif%}
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/pixyll.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}" type="text/css">
 
@@ -36,15 +42,17 @@
     <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
     {% endif %}
     {% if site.show_social_icons or site.show_sharing_icons %}
-      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     {% endif %}
 
-    <!-- Verifications -->
-    {% if site.google_verification %}
-      <meta name="google-site-verification" content="{{ site.google_verification }}" />
-    {% endif %}
-    {% if site.bing_verification %}
-      <meta name="msvalidate.01" content="{{ site.bing_verification }}" />
+    {% if site.google_verification || site.bing_verification %}
+      <!-- Verifications -->
+      {% if site.google_verification %}
+        <meta name="google-site-verification" content="{{ site.google_verification }}" />
+      {% endif %}
+      {% if site.bing_verification %}
+        <meta name="msvalidate.01" content="{{ site.bing_verification }}" />
+      {% endif %}
     {% endif %}
 
     <!-- Open Graph -->
@@ -59,8 +67,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     {% if site.twitter_username %}
-        <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
-        <meta name="twitter:site" content="@{{ site.twitter_username }}" />
+      <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
+      <meta name="twitter:site" content="@{{ site.twitter_username }}" />
     {% endif %}
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
     <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}" />
@@ -68,15 +76,15 @@
     <meta name="twitter:image" content="{{ site.url }}{{ page.featured-img }}">
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" href="/icon/favicon-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
     <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">

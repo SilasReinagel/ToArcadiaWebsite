@@ -1,0 +1,37 @@
+<div id='player-wrapper'>
+  <div id='player'>
+    <div class='main'>
+      <div class='controls-wrapper cf'>
+        <span id='play-pause' class='play-pause ctrl'></span>
+        <span id='gutter' class='gutter'>
+          <span id='fill' class='fill'>
+            <span id='handler' class='handler'>&nbsp;</span>
+          </span>
+        </span>
+        <div id='volume' class='volume' data-visible='hidden'>
+          <div  id='v-gutter-wrap' class='v-gutter-wrap'>
+            <div id='v-gutter' class='v-gutter'>
+              <div id='v-fill' class='v-fill'>
+                <div id='v-handler' class='v-handler'>&nbsp;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+          TODO: Move this to the playlist or some other place.
+        <span id='time-remaining' class='time-remaining'>00:00:00</span>
+        -->
+      </div>
+      <div class='playing'>
+        <div id='wrap-audio'>
+          <audio id='audio'><!-- Filled with JS. --></audio>
+        </div>
+        <div id='current'><!-- Filled with JS. --></div>
+      </div>
+    </div>
+    <div id='open-close-playlist' class='closed'></div>
+    <div id='playlist' class='playlist'>
+      <!-- Filled uppen player.init() invocation. -->
+    </div>
+  </div>
+</div>

@@ -27,6 +27,7 @@ footer {
   font-weight: $footer-font-weight;
   padding: 1.2em 0;
   text-align: center;
+  z-index: 999;
 }
 
 .site-footer p {

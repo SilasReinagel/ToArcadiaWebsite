@@ -1,8 +1,8 @@
 # Site settings
-title:       To Arcadia - Album Site
+title:       To Arcadia
 email:       pianist@toarcadia.com
 author:      Silvius Piano
-description: "Extreme Software Engineering Blog"
+description: "2019 Original Solo Piano Music Album - To Arcadia"
 baseurl:     ""
 url:         "https://www.toarcadia.com"
 date_format: "%b %-d, %Y"
