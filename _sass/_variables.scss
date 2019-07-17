@@ -6,8 +6,9 @@ $bold-font-weight: 600 !default;
 $font-family: 'Rubik', 'Merriweather', 'PT Serif', Georgia, 'Times New Roman', sans-serif !default;
 $line-height: 1.5 !default;
 $heading-font-family: 'HARRINGT', 'Lato', 'Helvetica Neue', Helvetica, sans-serif !default;
-$heading-font-weight: 700 !default;
+$heading-font-weight: 500 !default;
 $heading-line-height: 1.25 !default;
+$heading-letter-spacing: 0.1em !default;
 $script-font-family: 'coquette', 'Lato', 'Helvetica Neue', Helvetica, sans-serif !default;
 $script-font-weight: 400 !default;
 $monospace-font-family: 'Source Code Pro', Consolas, monospace !default;
@@ -95,7 +96,7 @@ $form-field-padding-y: .5rem !default;
 $form-field-padding-x: .5rem !default;
 
 // Borders
-$border-color: $light-gray !default;
+$border-color: $dark-gray !default;
 $border-width: 1px !default;
 $border-radius: 3px !default;
 

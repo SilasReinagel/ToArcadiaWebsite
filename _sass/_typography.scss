@@ -35,6 +35,20 @@ sup {
   top: -0.9ex;
 }
 
+.title {
+  font-size: 3.0em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.4em;
+}
+
+.script {
+  font-family: $script-font-family;
+  font-weight: $script-font-weight;
+}
+
 @font-face {
 	font-family: 'HARRINGT';
 	src: url('/fonts/HARRINGT.eot');
