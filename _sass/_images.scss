@@ -11,6 +11,9 @@
 
 .arcadia-bg-1 {
   background-image: url('/images/bg/Arcadia-2640x1280.jpg') !important;
+  background-position-x: center;
+  background-position-y: top;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -27,5 +30,10 @@
 .character img {  
   max-height: 60vh;
   height: 60vh;
-  margin: 1.2em;
+  margin: 0.2em;
+}
+
+.flip img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
