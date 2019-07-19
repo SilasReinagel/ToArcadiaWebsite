@@ -69,7 +69,6 @@
   opacity: 0.92;
   color: $site-color;
   text-decoration: none;
-  background-image: none;
 }
 
 /* NAVIGATION */
@@ -80,7 +79,7 @@ nav {
 nav ul {
   list-style: none;
   text-align: center;
-  margin: 10px 0px 10px 0;
+  margin: 8px 0px 8px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -93,7 +92,7 @@ nav ul li a {
   color: $site-bg-color;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0 15px;
+  margin: 0 0.84em;
 }
 nav ul li a,
 nav ul li a:after,

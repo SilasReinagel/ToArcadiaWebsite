@@ -10,6 +10,13 @@ abbr {
 p {
   color: $site-color;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 small,
@@ -28,8 +35,24 @@ sup {
   top: -0.9ex;
 }
 
+.title {
+  font-size: 3.0em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.4em;
+}
+
+.script {
+  font-family: $script-font-family;
+  font-weight: $script-font-weight;
+}
+
 @font-face {
 	font-family: 'HARRINGT';
 	src: url('/fonts/HARRINGT.eot');
-	src: local('/fonts/HARRINGT'), url('/fonts/HARRINGT.woff') format('woff'), url('/fonts/HARRINGT.ttf') format('truetype');
+  src: local('/fonts/HARRINGT'), 
+      url('/fonts/HARRINGT.woff') format('woff'), 
+      url('/fonts/HARRINGT.ttf') format('truetype');
 }

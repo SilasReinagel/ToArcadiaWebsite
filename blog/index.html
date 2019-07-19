@@ -1,0 +1,23 @@
+---
+layout: default
+title: "Creation Blog"
+---
+
+<div class="landing container">
+    {% for post in paginator.posts %}
+    <div class="card white-bg post ">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="featured-post post-link">
+        <div class="py2 px2">    
+          <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+          <div class="container mb1"><img class="post-featured-img" src="{{ post.featured-img }}" alt="Post Featured Image"></div>
+          <h2 class="h2 post-title center">{{ post.title }}</h2>
+          {{ post.excerpt }}
+          <p class="read-more">READ MORE</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+    {% include pagination.html %}
+</div>
+

@@ -4,7 +4,8 @@
 }
 
 .album-info .title {
-
+  font-size: $h1;
+  font-weight: $bold-font-weight;
 }
 
 .album-info .coming-soon {
@@ -12,4 +13,8 @@
 }
 
 .album-info .description {
+}
+
+.album-info .quote {
+  font-weight: $bold-font-weight;
 }
