@@ -1,0 +1,40 @@
+.email-subscribe {
+  max-width: 600px;
+  max-height: 60vh;
+}
+
+.email-subscribe .title {
+  font-size: $h1;
+  font-weight: $bold-font-weight;
+}
+
+.email-success {
+  display: none;
+}
+
+.email-subscribe .disclaimer {
+  font-size: 0.7em;
+}
+
+.email-subscribe label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.email-subscribe a {
+  color: #001d63;
+  font-weight: bold;
+}
+
+.email-subscribe input[type=text],
+.email-subscribe input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1.15rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
