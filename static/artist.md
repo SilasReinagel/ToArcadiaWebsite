@@ -60,7 +60,7 @@ permalink: artist.html
         <h4>“Wonderfully enchanting art!”</h4>
         <h4>“Enchanting and magical!”</h4>
         <h4>“beautiful scene!!! i love the strong shadows and warm light! wish i was there. wow.”</h4>
-        <p>Johannes is a digital artist from Estonia. He wants to bring a sense of wonder back to peoples' lives through the gorgeous and exciting worlds he portrays in my paintings.</p> 
+        <p>Johannes is a digital artist from Estonia. He wants to bring a sense of wonder back to peoples' lives through the gorgeous and exciting worlds he portrays in his paintings.</p> 
         <p>Johannes started out creating RPG-s in the video game Warcraft 3 and one day decided to pick up drawing because it has more creative freedom. And he's been making beautiful paintings ever since!</p>
       </div>
     </section>

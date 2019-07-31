@@ -1,13 +1,15 @@
 <script defer src="/js/email-subcribe.js"></script>
 
-<section class="email-subscribe column center">
+<section id="email-signup" class="email-subscribe column center">
   <h2 class="title mt0 mb1">Join the List</h2>
   <p>Join over <b>400</b> others on the <b>To Arcadia</b> email list, and get exclusive making-of content!</p>
   <form id="email-form" class="email-form row wrap">
-    <input type="email" id="email-entry" name="email" placeholder="Your email address">
+    <input id="email-entry" type="email" name="email" placeholder="Your email address">
     <input id="submit-email" type="submit" value="Join Now!">
   </form>
-  <div id="email-submitted" class="email-success">
-      <h2 class="mt0 mb2">You are signed up!</h2>
-  </div>
+</section>
+
+<section id="email-supporter" class="column center" style="display: 'none'">
+  <h2 class="bold">Thanks for supporting this project!</h2>
+  <h3>You are signed up for email updates.</h3>
 </section>
