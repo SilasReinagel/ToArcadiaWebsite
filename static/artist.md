@@ -4,8 +4,8 @@ title: "About Sylvius"
 permalink: artist.html
 ---
 
-<div class="about">
-  <h1 class="title center mt0">Artists</h1>
+<section class="artists">
+  <h1 class="title center mt2">Artists</h1>
   <div class="column">
     <section class="artist row no-wrap">
       <div class="card white-bg mobile-hidden character px0 py0">
@@ -17,7 +17,7 @@ permalink: artist.html
         </div>
         <hr>
       </div>
-      <div class="card white-bg p3 post">
+      <div class="card white-bg p2 post">
         <hr>
         <h4>"{{ site.author }} is a musician and composer with a rather unique approach to his sound and releases. What I love about his tracks is that they are beautifully cinematic. They don’t need lyrics in order to tell a compelling story..."</h4>
         <h4>"As a prolific composer, {{ site.author }} is a master at channeling a wide variety of musical influences, but in such a way the the sound never feels like a trite re-composition of some other artists' music, but rather something quite original, as a labour of love and passion for the music itself."</h4>
@@ -28,7 +28,7 @@ permalink: artist.html
       </div>
     </section>
     <section class="artist row no-wrap">
-      <div class="card white-bg p3 post">
+      <div class="card white-bg p2 post">
         <hr>        
         <h4>“an accomplished interpreter of romantic piano”</h4> <!-- American Record Guide -->
         <h4>“[Szczepanek’s] performance… is vocally inflected, declamatory, and filled with grand romantic gestures.”</h4> <!-- Fanfare Magazine -->
@@ -55,12 +55,12 @@ permalink: artist.html
         </div>
         <hr>
       </div>
-      <div class="card white-bg p3 post">
+      <div class="card white-bg p2 post">
         <hr>        
         <h4>“Wonderfully enchanting art!”</h4>
         <h4>“Enchanting and magical!”</h4>
         <h4>“beautiful scene!!! i love the strong shadows and warm light! wish i was there. wow.”</h4>
-        <p>Johannes is a digital artist from Estonia. He wants to bring a sense of wonder back to peoples' lives through the gorgeous and exciting worlds he portrays in my paintings.</p> 
+        <p>Johannes is a digital artist from Estonia. He wants to bring a sense of wonder back to peoples' lives through the gorgeous and exciting worlds he portrays in his paintings.</p> 
         <p>Johannes started out creating RPG-s in the video game Warcraft 3 and one day decided to pick up drawing because it has more creative freedom. And he's been making beautiful paintings ever since!</p>
       </div>
     </section>

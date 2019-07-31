@@ -18,6 +18,7 @@
 }
 
 .container {
+  width: 100%;
   display: flex; 
   justify-content: center;
 }
@@ -53,4 +54,9 @@
 
 .no-bottom-margin {
   margin-bottom: 0;
+}
+
+.bottom {
+  display: flex;
+  align-items: bottom;
 }

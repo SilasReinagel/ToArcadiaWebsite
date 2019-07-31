@@ -2,20 +2,21 @@
 layout: default
 title: "Piano Album"
 permalink: index.html
-audio: true
+audio: false
 ---
 
-<div class="container measure" role="main">
-  <div class="mobile-hidden character-left">
-    <img src="/images/sylvius-1920.png" alt="Sylvius - Illustrated Portrait"/>
-  </div>
+<div class="container" role="main">
   <div class="column">
-    <div class="album-info card white-bg center">
+    <section class="album-info card white-bg center">
       <h1 class="title no-bottom-margin">Original Piano Album</h1>
       <h2 class="coming-soon no-top-margin">Coming December 2019</h2>
       <img src="/images/album-title.jpg" alt="To Arcadia - Album Cover"/>
       <h4 class="description">Incredible solo piano music to uplift your soul, inspire you, and take you on the musical adventure you've always dreamed of!</h4>
       <h4 class="quote">"Breathtaking soundscapes that fill you with emotion! To Arcadia is the most promising piano album of 2019."</h4>
-    </div>
+    </section>
+    
+    <section id="email" class="card white-bg hidden">
+      {% include email-subscribe.html %}
+    </section>
   </div>
 </div>
