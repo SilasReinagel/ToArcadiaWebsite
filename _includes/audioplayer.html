@@ -14,11 +14,11 @@
               <input id="play-pause-button" type="image" src="/images/icons/play.svg"/>
               <input id="previous-button" type="image" src="/images/icons/previous.svg"/>
               <input id="next-button" type="image" src="/images/icons/next.svg"/>
-              <label id="song-progress-label">0:00 / 0:00</label>
+              <label id="song-progress-text">0:00 / 0:00</label>
               <img id="volume-img">
               <input id="volume-control" type="range" min="0" max="100" step="1" value="50"/>
           </div>
-          <input id="song-progress" type="range" min="0" max="0" step="1" value="0"/>
+          <input id="song-progress-control" type="range" min="0" max="0" step="1" value="0"/>
       </div>
   </div>
   <input id="loop-button" type="image" src="/images/icons/loop.svg">
@@ -26,7 +26,7 @@
 </section>
 
 <script type="text/javascript">
-      new AudioPlayer([
+    new AudioPlayer([
         new Song("Sylvius", "Onwards and Upwards", "To Arcadia", "/images/bg/Arcadia-1920x1280.jpg", ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/Onwards_And_Upwards_Raw_Preview.mp3"]),
     ]);
 </script>

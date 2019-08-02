@@ -1,172 +1,276 @@
-function Song(artist, name, album, img, sources) {
-  this.artist = artist;
-  this.name = name;
-  this.album = album;
-  this.img = img;
-  this.sources = sources;
+function AudioPlayer(songs) {
+    this._audio = new Audio("audio-player");
+    this._songImg = new Image("song-img");
+    this._artist = new Text("artist");
+    this._name = new Text("song-name");
+    this._album = new Text("album");
+    this._playPause = new ImageButton("play-pause-button", () => {
+        this._audio.toggleState();
+        this._playPause.setImg(this._audio.isPlaying ? "/images/icons/pause.svg" : "/images/icons/play.svg");
+    });
+    this._volumeControl = new VolumeControl(this._audio);
+    this._songProgress = new SongProgress(this._audio);
+    this._playlist = new Playlist(songs, this._audio, (song) => {
+        this._songImg.setImg(song.img);
+        this._artist.setText(song.artist);
+        this._name.setText(song.name);
+        this._album.setText(song.album);
+    });
+    document.getElementById('audio').classList.remove('hidden');
 }
 
-function AudioPlayer(songs) {
-  this.elements = {
-      audio: document.getElementById("audio-player"),
-      songImg: document.getElementById("song-img"),
-      artist: document.getElementById("artist"),
-      name: document.getElementById("song-name"),
-      album: document.getElementById("album"),
-      playPause: document.getElementById("play-pause-button"),
-      previous: document.getElementById("previous-button"),
-      next: document.getElementById("next-button"),
-      progressLabel: document.getElementById("song-progress-label"),
-      volumeImg: document.getElementById("volume-img"),
-      volumeControl: document.getElementById("volume-control"),
-      progress: document.getElementById("song-progress"),
-      loop: document.getElementById("loop-button"),
-      playlist: document.getElementById("playlist"),
-      playlistItems: songs.map((song, index) => {
-          const element = document.createElement("li");
-          element.innerText = song.name;
-          element.onclick = () => this.changeSong(index);
-          return element;
-      }),
-      audioSources: []
-  };
-  this.songIndex = -1;
-  this.isPlaying = false;
-  this.isSeeking = false;
-  this.isLooping = false;
+function Audio(id) {
+    this._element = document.getElementById(id);
+    this._audioSources = [];
+    this._isPlaying = false;
+    this._isSeeking = false;
+    this._element.ondurationchange = () => {};
+    this._element.onplay = () => this._isPlaying = true;
+    this._element.onpause = () => {
+        if (!this._isSeeking)
+            this._isPlaying = false;
+    };
+    this._element.ontimeupdate = () => {};
+    this._element.onended = () => {};
 
-  this.elements.audio.ondurationchange = () => {
-      this.elements.progress.max = Math.round(this.elements.audio.duration);
-      this.updateCurrentTime();
-  };
-  this.elements.audio.onplay = () => {
-      this.elements.playPause.src = "/images/icons/pause.svg";
-      this.isPlaying = true;
-  };
-  this.elements.audio.onpause = () => {
-      this.elements.playPause.src = "/images/icons/play.svg";
-      if (!this.isSeeking)
-          this.isPlaying = false;
-  };
-  this.elements.audio.ontimeupdate = () => this.updateCurrentTime();
-  this.elements.audio.onended = () => {
-      if (this.songIndex !== songs.length - 1)
-          this.changeSong(this.songIndex + 1);
-      else if (this.isLooping)
-          this.changeSong(0);
-  };
-  this.elements.playPause.onclick = () => {
-      if (this.elements.audio.paused)
-          this.elements.audio.play();
-      else
-          this.elements.audio.pause();
-  };
-  this.elements.previous.onclick = () => {
-      if (this.songIndex !== 0)
-          this.changeSong(this.songIndex - 1);
-      else if (this.isLooping)
-          this.changeSong(songs.length - 1);
-  };
-  this.elements.next.onclick = () => {
-      if (this.songIndex !== songs.length - 1)
-          this.changeSong(this.songIndex + 1);
-      else if (this.isLooping)
-          this.changeSong(0);
-  };
-  this.elements.volumeControl.oninput = () => this.changeVolume(this.elements.volumeControl.value);
-  this.elements.volumeControl.onchange = () => this.changeVolume(this.elements.volumeControl.value);
-  this.elements.progress.oninput = () => {
-      this.isSeeking = true;
-      this.elements.audio.pause();
-      this.updateProgressLabel(this.elements.progress.value);
-  };
-  this.elements.progress.onchange = () => {
-      this.isSeeking = false;
-      this.elements.audio.currentTime = this.elements.progress.value;
-      this.updateCurrentTime();
-      if (this.isPlaying)
-          this.elements.audio.play();
-  };
-  this.elements.loop.onclick = () => this.isLooping = !this.isLooping;
+    this.getDuration = () => this._element.duration;
+    this.getCurrentTime = () => this._element.currentTime;
+    this.isPlaying = () => this._isPlaying;
 
-  this.changeSong = (songIndex) => {
-      this.elements.audio.stop();
-      this.selectSong(songIndex);
-      this.elements.audio.play();
-  };
+    this.addDurationListener = (onDurationChange) => {
+        let eventOriginal = this._element.ondurationchange;
+        this._element.ondurationchange = () => {
+            eventOriginal();
+            onDurationChange();
+        }
+    };
 
-  this.selectSong = (songIndex) => {
-      if (songIndex === this.songIndex)
-          return;
-      this.elements.songImg.src = songs[songIndex].img;
-      this.replaceText(this.elements.artist, songs[songIndex].artist);
-      this.replaceText(this.elements.name, songs[songIndex].name);
-      this.replaceText(this.elements.album, songs[songIndex].album);
-      this.setNewSources(songs[songIndex].sources);
-      this.songIndex = songIndex;
-      this.elements.audio.load();
-  };
+    this.addTimeUpdateListener = (onTimeUpdate) => {
+        let eventOriginal = this._element.ontimeupdate;
+        this._element.ontimeupdate = () => {
+            eventOriginal();
+            onTimeUpdate();
+        }
+    };
 
-  this.replaceText = (element, text) => {
-      const child = element.firstChild;
-      while(child) {
-          if (child.nodeType === 3)
-              element.removeChild(child);
-          child = child.nextSibling;
-      }
-      element.appendChild(document.createTextNode(text));
-  };
+    this.addOnEndedListener = (onEnded) => {
+        let eventOriginal = this._element.onended;
+        this._element.onended = () => {
+            eventOriginal();
+            onEnded();
+        }
+    };
 
-  this.setNewSources = (sources) => {
-      for (const element of this.elements.audioSources)
-          this.elements.audio.removeChild(element);
-      const sourceElements = sources.map(source => {
-          const element = document.createElement("source");
-          element.src = source;
-          element.type = this.getAudioType(source);
-          return element;
-      });
-      this.elements.audioSources = sourceElements;
-      for (const element of sourceElements)
-          this.elements.audio.appendChild(element);
-  };
+    this.toggleState = () => {
+        if(this._element.paused)
+            this.play();
+        else
+            this.pause();
+    };
 
-  this.getAudioType = (source) => {
-      const extension = source.split('.').pop();
-      if (extension === "wav")
-          return "audio/wav";
-      if (extension === "ogg")
-          return "audio/ogg";
-      return "audio/mpeg";
-  };
+    this.startSeek = () => {
+        this._isSeeking = true;
+        this.pause();
+    };
 
-  const formatSeconds = (seconds) => Math.round(seconds % 60).toString().padStart(2, '0');
-  const formatTime = (timeInSeconds) => `${Math.floor(timeInSeconds / 60)}:${formatSeconds(timeInSeconds)}`;
-  this.updateProgressLabel = (currentTime) => this.elements.progressLabel.innerText = `${formatTime(currentTime)} / ${formatTime(this.elements.audio.duration)}`;
+    //This function only exists because of a bug in microsoft edge and internet explorer
+    this.seek = (time) => {
+        this._element.currentTime = time;
+    };
 
-  this.updateCurrentTime = () => {
-      const currentTime = this.elements.audio.currentTime;
-      this.elements.progress.value = Math.round(currentTime);
-      this.updateProgressLabel(currentTime);
-  };
+    this.finishSeek = (time) => {
+        this._isSeeking = false;
+        this._element.currentTime = time;
+        if (this._isPlaying)
+            this.play();
+    };
 
-  this.changeVolume = (volume) => {
-      if (volume === 0)
-          this.elements.volumeImg.src = "/images/icons/volume_off.svg";
-      else if (volume <= 30)
-          this.elements.volumeImg.src = "/images/icons/volume_mute.svg";
-      else if (volume <= 60)
-          this.elements.volumeImg.src = "/images/icons/volume_down.svg";
-      else
-          this.elements.volumeImg.src = "/images/icons/volume_up.svg";
-      this.elements.audio.volume = volume / 100;
-  };
+    this.play = () => this._element.play();
 
-  //Init
-  for (const element of this.elements.playlistItems)
-      this.elements.playlist.appendChild(element);
-  this.selectSong(0);
-  this.changeVolume(80);
-  
-  document.getElementById('audio').classList.remove('hidden');
+    this.pause = () => this._element.pause();
+
+    this.setVolume = (volume) => this._element.volume = volume;
+
+    this.setAudioSources = (sources) => {
+        for (let source of this._audioSources)
+            this._element.removeChild(source);
+        this._audioSources = sources.map(source => {
+            let element = document.createElement("source");
+            element.src = source;
+            element.type = this._getAudioType(source);
+            return element;
+        });
+        for (let source of this._audioSources)
+            this._element.appendChild(source);
+        this._element.load();
+    };
+
+    this._getAudioType = (source) => {
+        let extension = source.split('.').pop();
+        if (extension === "wav")
+            return "audio/wav";
+        if (extension === "ogg")
+            return "audio/ogg";
+        return "audio/mpeg";
+    };
+}
+
+function ImageButton(id, onclick) {
+    this._element = document.getElementById(id);
+    this._element.onclick = onclick;
+
+    this.setImg = (src) => this._element.src = src;
+}
+
+function VolumeControl(audio) {
+    this._img = new Image("volume-img");
+    this._img.setImg("/images/icons/volume_down.svg");
+    this._control = new Range("volume-control", () => this._updateVolume(), () => this._updateVolume(), () => this._updateVolume());
+    this._control.setValue(50);
+
+    this._updateVolume = () => {
+        let volume = parseInt(this._control.getValue());
+        if (volume === 0)
+            this._img.setImg("/images/icons/volume_off.svg");
+        else if (volume <= 50)
+            this._img.setImg("/images/icons/volume_down.svg");
+        else
+            this._img.setImg("/images/icons/volume_up.svg");
+        audio.setVolume(volume / 100);
+    };
+}
+
+function Image(id) {
+    this._element = document.getElementById(id);
+
+    this.setImg = (src) => this._element.src = src;
+}
+
+function SongProgress(audio) {
+    audio.addDurationListener(() => {
+        this._control.setMax(audio.getDuration());
+        this._updateCurrentTime();
+    });
+    audio.addTimeUpdateListener(() => this._updateCurrentTime());
+
+    this._text = new Text("song-progress-text");
+    this._control = new Range("song-progress-control",
+        () => {
+            audio.startSeek();
+            this._text.setText(this._toReadableTime(this._control.getValue(), audio.getDuration()));
+        },
+        () => {
+            audio.finishSeek(this._control.getValue());
+            this._updateCurrentTime();
+        },
+        //this is only used when using microsoft edge or internet explorer, it is worse performance and creates a weird sound effect when seeking but otherwise works perfectly
+        () => {
+            audio.seek(this._control.getValue());
+            this._updateCurrentTime();
+        });
+
+    this._updateCurrentTime = () => {
+        this._control.setValue(Math.round(audio.getCurrentTime()));
+        this._text.setText(this._toReadableTime(audio.getCurrentTime(), audio.getDuration()));
+    };
+
+    const formatSeconds = (seconds) => Math.round(seconds % 60).toString().padStart(2, '0');
+    const formatTime = (timeInSeconds) => `${Math.floor(timeInSeconds / 60)}:${formatSeconds(timeInSeconds)}`;
+    this._toReadableTime = (currentSeconds, maxSeconds) => `${formatTime(currentSeconds)} / ${formatTime(maxSeconds)}`;
+}
+
+function Text(id) {
+    this._element = document.getElementById(id);
+
+    this.setText = (text) => {
+        let child = this._element.firstChild;
+        while(child) {
+            if (child.nodeType === 3)
+                this._element.removeChild(child);
+            child = child.nextSibling;
+        }
+        this._element.appendChild(document.createTextNode(text));
+    };
+}
+
+function Range(id, onInput, onChange, onInputForMsBrowser) {
+    this._element = document.getElementById(id);
+    this._isMsBrowser = navigator.appName === 'Microsoft Internet Explorer' || (navigator.appName === "Netscape" && navigator.appVersion.indexOf('Edge') > -1) || (navigator.appName === "Netscape" && navigator.appVersion.indexOf('Trident') > -1);
+    this._element.oninput = () => {
+        //there is a bug with microsoft edge and internet explorer that can cause onchange event to not fire, therefore we have to do more work here
+        if (this._isMsBrowser)
+            onInputForMsBrowser();
+        else
+            onInput();
+    };
+    this._element.onchange = onChange;
+
+    this.getValue = () => this._element.value;
+    this.setValue = (value) => this._element.value = value;
+    this.setMax = (max) => this._element.max = max;
+}
+
+function Playlist(songs, audio, onSongChange) {
+    audio.addOnEndedListener(() => {
+        if (this._songIndex !== songs.length - 1)
+            this._changeSong(this._songIndex + 1);
+        else if (this._isLooping)
+            this._changeSong(0);
+    });
+    this._songIndex = -1;
+    this._isLooping = false;
+    this._playlist = new List("playlist");
+    this._playlist.setItems(songs.map((song, index) => {
+        let element = document.createElement("li");
+        element.innerText = song.name;
+        element.onclick = () => this._changeSong(index);
+        return element;
+    }));
+    this._loop = new ImageButton("loop-button", () => this._isLooping = !this._isLooping);
+    this._previous = new ImageButton("previous-button", () => {
+        if (this._songIndex !== 0)
+            this._changeSong(this._songIndex - 1);
+        else if (this._isLooping)
+            this._changeSong(songs.length - 1);
+    });
+    this._next = new ImageButton("next-button", () => {
+        if (this._songIndex !== songs.length - 1)
+            this._changeSong(this._songIndex + 1);
+        else if (this._isLooping)
+            this._changeSong(0);
+    });
+
+    this._changeSong = (songIndex) => {
+        this.selectSong(songIndex);
+        audio.play();
+    };
+
+    this.selectSong = (songIndex) => {
+        if (songIndex === this._songIndex)
+            return;
+        onSongChange(songs[songIndex]);
+        audio.setAudioSources(songs[songIndex].sources);
+        this._songIndex = songIndex;
+    };
+
+    this.selectSong(0);
+}
+
+function Song(artist, name, album, img, sources) {
+    this.artist = artist;
+    this.name = name;
+    this.album = album;
+    this.img = img;
+    this.sources = sources;
+}
+
+function List(id) {
+    this._element = document.getElementById(id);
+
+    this.setItems = (items) => {
+        while(this._element.firstChild)
+            this._element.removeChild(this._element.firstChild);
+        for (let element of items)
+            this._element.appendChild(element);
+    };
 }

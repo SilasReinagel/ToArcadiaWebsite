@@ -1,50 +1,74 @@
 #audio-player-div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #song-div {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  #song-inner-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  #song-info-div {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-  }
-  
-  #song-controls-div {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  #play-pause-button {
-    align-self: flex-start;
-  }
-  
-  #previous-button {
-    align-self: flex-start;
-  }
-  
-  #next-button {
-    align-self: flex-start;
-  }
-  
-  #song-progress-label {
-    align-self: flex-start;
-  }
-  
-  #volume-img {
-    align-self: flex-end;
-  }
-  
-  #volume-control {
-    align-self: flex-end;
-  }
+  display: flex;
+  flex-direction: column;
+}
+
+#song-div {
+  display: flex;
+  flex-direction: row;
+}
+
+#song-img {}
+
+#song-inner-div {
+  display: flex;
+  flex-direction: column;
+}
+
+#song-info-div {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+#artist {}
+
+#song-name {}
+
+#album {}
+
+#song-controls-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#play-pause-button {
+  width: 32px;
+  height: 32px;
+  filter: invert(63%) sepia(8%) saturate(138%) hue-rotate(71deg) brightness(96%) contrast(81%);
+  &:hover { filter: invert(0%) sepia(3%) saturate(7489%) hue-rotate(331deg) brightness(79%) contrast(100%); }
+}
+
+#previous-button {
+  width: 16px;
+  height: 16px;
+  filter: invert(63%) sepia(8%) saturate(138%) hue-rotate(71deg) brightness(96%) contrast(81%);
+  &:hover { filter: invert(0%) sepia(3%) saturate(7489%) hue-rotate(331deg) brightness(79%) contrast(100%); }
+}
+
+#next-button {
+  width: 16px;
+  height: 16px;
+  filter: invert(63%) sepia(8%) saturate(138%) hue-rotate(71deg) brightness(96%) contrast(81%);
+  &:hover { filter: invert(0%) sepia(3%) saturate(7489%) hue-rotate(331deg) brightness(79%) contrast(100%); }
+}
+
+#song-progress-text {
+  fint-size: 16px;
+  filter: invert(63%) sepia(8%) saturate(138%) hue-rotate(71deg) brightness(96%) contrast(81%);
+  &:hover { filter: invert(0%) sepia(3%) saturate(7489%) hue-rotate(331deg) brightness(79%) contrast(100%); }
+}
+
+#volume-img {
+  width: 16px;
+  height: 16px;
+}
+
+#volume-control {}
+
+#song-progress-control {}
+
+#loop-button {}
+
+#playlist {}
