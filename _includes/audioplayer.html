@@ -1,37 +1,32 @@
-<div id='player-wrapper'>
-  <div id='player'>
-    <div class='main'>
-      <div class='controls-wrapper cf'>
-        <span id='play-pause' class='play-pause ctrl'></span>
-        <span id='gutter' class='gutter'>
-          <span id='fill' class='fill'>
-            <span id='handler' class='handler'>&nbsp;</span>
-          </span>
-        </span>
-        <div id='volume' class='volume' data-visible='hidden'>
-          <div  id='v-gutter-wrap' class='v-gutter-wrap'>
-            <div id='v-gutter' class='v-gutter'>
-              <div id='v-fill' class='v-fill'>
-                <div id='v-handler' class='v-handler'>&nbsp;</div>
-              </div>
-            </div>
+<script src="/js/audioplayer.js"></script>
+
+<section id="audio" class="card hidden white-bg" id="audio-player-div">
+  <audio id="audio-player"></audio>
+  <div id="song-div">
+      <img id="song-img">
+      <div id="song-inner-div">
+          <div id="song-info-div">
+              <label id="artist"></label>
+              <label id="song-name"></label>
+              <label id="album"></label>
           </div>
-        </div>
-        <!--
-          TODO: Move this to the playlist or some other place.
-        <span id='time-remaining' class='time-remaining'>00:00:00</span>
-        -->
+          <div id="song-controls-div">
+              <input id="play-pause-button" type="image" src="/images/icons/play.svg"/>
+              <input id="previous-button" type="image" src="/images/icons/previous.svg"/>
+              <input id="next-button" type="image" src="/images/icons/next.svg"/>
+              <label id="song-progress-label">0:00 / 0:00</label>
+              <img id="volume-img">
+              <input id="volume-control" type="range" min="0" max="100" step="1" value="50"/>
+          </div>
+          <input id="song-progress" type="range" min="0" max="0" step="1" value="0"/>
       </div>
-      <div class='playing'>
-        <div id='wrap-audio'>
-          <audio id='audio'><!-- Filled with JS. --></audio>
-        </div>
-        <div id='current'><!-- Filled with JS. --></div>
-      </div>
-    </div>
-    <div id='open-close-playlist' class='closed'></div>
-    <div id='playlist' class='playlist'>
-      <!-- Filled uppen player.init() invocation. -->
-    </div>
   </div>
-</div>
+  <input id="loop-button" type="image" src="/images/icons/loop.svg">
+  <ol class="playlist" id="playlist"></ol>
+</section>
+
+<script type="text/javascript">
+      new AudioPlayer([
+        new Song("Sylvius", "Onwards and Upwards", "To Arcadia", "/images/bg/Arcadia-1920x1280.jpg", ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/Onwards_And_Upwards_Raw_Preview.mp3"]),
+    ]);
+</script>
