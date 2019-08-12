@@ -14,7 +14,16 @@ audio: false
       <h4 class="description">Incredible solo piano music to uplift your soul, inspire you, and take you on the musical adventure you've always dreamed of!</h4>
       <h4 class="quote">"Breathtaking soundscapes that fill you with emotion! To Arcadia is the most promising piano album of 2019."</h4>
     </section>
-    
+
+    {% include audioplayer.html %}
+    <script type="text/javascript">
+      new AudioPlayer(new AudioSettings({ volume: 80, isLooping: false }), [
+          new Song("Sylvius", "Onwards and Upwards", "To Arcadia", 
+            "https://silasreinagel.sirv.com/LiteHtml5AudioPlayer/OnwardsAndUpwards.jpg", 
+            ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/Onwards_And_Upwards_Raw_Preview.mp3"])
+      ]);
+    </script>
+
     <section id="email" class="card white-bg hidden">
       {% include email-subscribe.html %}
     </section>
