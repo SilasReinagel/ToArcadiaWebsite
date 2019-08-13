@@ -1,6 +1,17 @@
 .album-info {
   max-width: 600px;
-  max-height: 60vh;
+}
+
+.album-info img {
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.album-info .text {
+  margin-left: 2em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
 }
 
 .album-info .title {
@@ -10,6 +21,7 @@
 
 .album-info .coming-soon {
   font-size: 1.3em;
+  margin-bottom: 0.8em;
 }
 
 .album-info .description {
