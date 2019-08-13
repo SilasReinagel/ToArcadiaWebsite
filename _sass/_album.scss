@@ -1,17 +1,19 @@
 .album-info {
-  max-width: 600px;
 }
 
 .album-info img {
-  max-width: 280px;
+  max-width: 240px;
+  min-width: 240px;
   height: auto;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .album-info .text {
-  margin-left: 2em;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
   margin-top: 1em;
   margin-bottom: 1.5em;
+  max-width: 24em;
 }
 
 .album-info .title {
@@ -21,14 +23,14 @@
 
 .album-info .coming-soon {
   font-size: 1.3em;
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
 }
 
 .album-info .description {
+  font-weight: $bold-font-weight;
 }
 
 .album-info .quote {
-  font-weight: $bold-font-weight;
 }
 
 .album-hero .character img {  

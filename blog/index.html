@@ -3,7 +3,7 @@ layout: default
 title: "Creation Blog"
 ---
 
-<div class="landing container">
+<div class="landing">
     {% for post in paginator.posts %}
     <div class="card white-bg post ">
       <a href="{{ post.url | prepend: site.baseurl }}" class="featured-post post-link">

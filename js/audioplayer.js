@@ -1,5 +1,4 @@
 function AudioSettings({ volume, isLooping }) {
-    console.log({ volume, isLooping });
     this.volume = volume || 50;
     this.isLooping = isLooping || false;
     this.setVolume = (volume) => {
@@ -173,7 +172,7 @@ function VolumeControl(settings) {
 
 function Image(id) {
     this._element = document.getElementById(id);
-
+        
     this.setImg = (src) => this._element.src = src;
 }
 
@@ -215,6 +214,9 @@ function Text(id) {
     this._element = document.getElementById(id);
 
     this.setText = (text) => {
+        if (!this._element)
+            return;
+
         let child = this._element.firstChild;
         while(child) {
             if (child.nodeType === 3)
