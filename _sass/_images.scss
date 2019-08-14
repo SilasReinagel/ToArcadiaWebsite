@@ -33,6 +33,18 @@
   margin: 0.2em;
 }
 
+.character-small {
+  overflow: hidden;
+  max-height: 20vh;
+  min-width: 33vw;
+}
+
+.character-small img {
+  max-height: 30vh;
+  height: 30vh;
+  margin: 0.2em;
+}
+
 .flip img {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);

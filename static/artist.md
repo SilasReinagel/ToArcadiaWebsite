@@ -18,6 +18,15 @@ permalink: artist.html
         <hr>
       </div>
       <div class="card white-bg p2 post">
+        <div class="mobile-only row">
+          <div class="column top">
+            <h2 class="bold mb2">{{ site.author }}</h2>
+            <h3 class="mb0">Composer</h3>
+          </div>
+          <div class="character-small">
+            <img src="/images/sylvius-1920.png" alt="Sylvius - Illustrated Portrait"/>
+          </div>
+        </div>
         <hr>
         <h4>"{{ site.author }} is a musician and composer with a rather unique approach to his sound and releases. What I love about his tracks is that they are beautifully cinematic. They don’t need lyrics in order to tell a compelling story..."</h4>
         <h4>"As a prolific composer, {{ site.author }} is a master at channeling a wide variety of musical influences, but in such a way the the sound never feels like a trite re-composition of some other artists' music, but rather something quite original, as a labour of love and passion for the music itself."</h4>
@@ -29,6 +38,15 @@ permalink: artist.html
     </section>
     <section class="artist row no-wrap">
       <div class="card white-bg p2 post">
+        <div class="mobile-only row">
+          <div class="character-small">
+            <img src="/images/charles.png" alt="Charles Szczepanek - Illustrated Portrait"/>
+          </div>
+          <div class="column top text-right">
+            <h2 class="bold mb2">Charles Szczepanek</h2>
+            <h3 class="mb0">Pianist</h3>
+          </div>
+        </div>
         <hr>        
         <h4>“an accomplished interpreter of romantic piano”</h4> <!-- American Record Guide -->
         <h4>“[Szczepanek’s] performance… is vocally inflected, declamatory, and filled with grand romantic gestures.”</h4> <!-- Fanfare Magazine -->
@@ -56,6 +74,15 @@ permalink: artist.html
         <hr>
       </div>
       <div class="card white-bg p2 post">
+        <div class="mobile-only row">
+          <div class="column top">
+            <h2 class="bold mb2">Johannes K Roots</h2>
+            <h3 class="mb0">Artist</h3>
+          </div>
+          <div class="character-small">
+            <img src="/images/johannes.png" alt="Johannes K Roots - Illustrated Portrait"/>
+          </div>
+        </div>
         <hr>        
         <h4>“Wonderfully enchanting art!”</h4>
         <h4>“Enchanting and magical!”</h4>
@@ -65,4 +92,4 @@ permalink: artist.html
       </div>
     </section>
   </div>
-</div>
+</section>

@@ -5,6 +5,12 @@
     height: 0;
   }
 
+  .mobile-only {
+  }
+
+  .mobile-bg-img img {
+  }
+
   .mobile-right{
     margin-right: -100px;
   }
@@ -72,7 +78,17 @@
   html {
     font-size: 16px;
   }
-  
+
+  .mobile-only {
+    display: none !important;
+  }
+
+  .mobile-bg-img img {
+    display: none !important;
+    width: 0;
+    height: 0;
+  }
+
   .mobile-hidden {
   }  
 }
