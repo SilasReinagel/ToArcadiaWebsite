@@ -1,0 +1,30 @@
+.gumroad-button {
+  margin: 0 auto;
+  max-width: 210px;
+}
+
+.gumroad-loading-link {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.order-button {
+  border-radius: 3px;
+  border: 0px;
+  background-image: url("/images/order-button.jpg");
+  max-width: 220px;
+  margin: 0.5em auto 0.2em auto;
+  padding: 8px 32px;  
+  transition-duration: 0.2s;
+  font-family: $heading-font-family;
+  font-size: $h3;
+  color: #f6ff00;
+}
+
+.order-button:hover,
+.order-button:active,
+.order-button:focus  {
+  background-image: url("/images/order-button-hover.jpg");
+  color: rgba(0,0,0,0);
+}
