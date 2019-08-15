@@ -18,6 +18,8 @@ function AudioPlayer(settings, songs) {
     this._playPause = new ImageButton("play-pause-button", () => {
         const isPlaying = this._audio.toggleState();
         this._playPause.setImg(isPlaying ? "/images/audioplayer/pause.svg" : "/images/audioplayer/play.svg");
+        if (isPlaying)
+            ga('send', { hitType: 'event', eventCategory: 'song', eventAction: 'play', eventLabel: this._name.getText() })
     });
     this._volumeControl = new VolumeControl(this._settings);
     this._songProgress = new SongProgress(this._audio);
@@ -212,11 +214,13 @@ function SongProgress(audio) {
 
 function Text(id) {
     this._element = document.getElementById(id);
+    this._text = '';
 
     this.setText = (text) => {
         if (!this._element)
             return;
 
+        this._text = text;
         let child = this._element.firstChild;
         while(child) {
             if (child.nodeType === 3)
@@ -225,6 +229,8 @@ function Text(id) {
         }
         this._element.appendChild(document.createTextNode(text));
     };
+
+    this.getText = () => this._text;
 }
 
 function Range(id, onInput, onChange, onInputForMsBrowser) {

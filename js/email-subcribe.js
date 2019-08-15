@@ -32,7 +32,8 @@ const initEmail = () =>
         jsonIo
             .put({ subscribedAt: new Date().getTime(), email: email, subscribed: true })
             .then(item => localStorageIo.put(item))
-            .then(_ => updateEmailVisibility())            
+            .then(_ => updateEmailVisibility())    
+            .then(_ => ga('send', { hitType: 'event', eventCategory: 'email', eventAction: 'subscribe', eventLabel: 'Pre-Order Campaign' }))
             .catch(_ => console.log('Subscription failed'));
 
     updateEmailVisibility();
