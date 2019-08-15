@@ -1,0 +1,26 @@
+.landing-page {
+  padding-bottom: 2.5em;
+}
+.landing-page h1, 
+.landing-page h2 {
+  font-weight: $bold-font-weight;
+}
+
+.landing-page .section-head {
+  margin-bottom: 1em;
+}
+
+.landing-page .album-cover {
+}
+
+.landing-page .row p {
+  margin: auto;
+  max-width: 24em;
+}
+
+.landing-page #audio {
+  max-width: 32em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
