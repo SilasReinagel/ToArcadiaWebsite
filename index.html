@@ -7,28 +7,6 @@ audio: false
 
 <div class="container" role="main">
   <div class="column measure card white-bg center">
-    <section class="album-info">
-      <h1 class="title no-bottom-margin">Original Piano Album</h1>
-      <h2 class="coming-soon no-top-margin">Coming December 2019</h2>
-      <div class="row wrap">
-          <img src="/images/album-title.jpg" alt="To Arcadia - Album Cover"/>
-          <div class="column center text">
-              <h4 class="description">Incredible solo piano music to uplift your soul, inspire you, and take you on the musical adventure you've always dreamed of!</h4>
-              <h4 class="quote">"Breathtaking soundscapes that fill you with emotion! To Arcadia is the most promising piano album of 2019."</h4>
-              <a class="order-button" href="/order">Pre-Order Now</a>
-          </div>
-      </div>
-    </section>    
-    <hr/>
-    {% include audioplayer.html %}
-    <script type="text/javascript">
-      new AudioPlayer(new AudioSettings({ volume: 80, isLooping: false }), [
-          new Song("Sylvius", "Onwards and Upwards", "To Arcadia", 
-            "https://silasreinagel.sirv.com/LiteHtml5AudioPlayer/OnwardsAndUpwards.jpg", 
-            ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/OnwardsAndUpwards-SuperEarlyBird.mp3"])
-      ]);
-    </script>
-    <hr/>
-    {% include email-subscribe.html %}
+    {% include landing-page-copy.html %}
   </div>
 </div>

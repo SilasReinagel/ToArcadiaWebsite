@@ -1,0 +1,51 @@
+<section class="landing-page">
+  <h1 class="mb0">THE PIANO ALBUM YOU DON’T WANT TO MISS</h1>
+  <h2 class="mt1 mb0 mobile-hidden"> UPLIFTING, DYNAMIC, EXCITING!</h2>
+  <h3 class="coming-soon mt1">Coming December 2019</h3>
+  <div class="row wrap">
+      <img class="album-cover" src="/images/album-title.jpg" alt="To Arcadia - Album Cover"/>
+      <p class="text">Whether you’re looking to improve your ability to engage in deep focus at work, or looking to find the perfect melodies that are sure to fill you and your close ones with joy and serenity; To Arcadia by Sylvius will uplift your soul, inspire you, and take you to the places you usually only find in your most enchanted dreams.              </p>
+  </div>
+
+  <hr/>
+  <h2 class="section-head">What you can expect...</h2>
+  <p>Whether you’re hosting a sophisticated evening dinner party, putting your children to sleep at night, 
+    or focusing deeply on a project at work; the rich variety of styles, moods and compositions in 
+    To Arcadia will reflect and compliment your energy level at all times.</p>
+  <p>The album is brimming with <i>‘breath-taking soundscapes that fill you with emotion’</i>, 
+    described as <i>‘the most promising album of 2019’</i>; soothing to the ears of children and 
+    delightfully refreshing to even the most refined pianists.</p>
+    
+  <hr/>
+  <h2 class="section-head">Unlike any other album you’ve heard before...</h2>
+  <p>Sylvius has crafted an album that is dynamic yet harmonious, tender but energetic; keeping you in a state of active listening - whilst taking you to new and rich soundscapes with every passing track.</p>
+
+  <hr/>
+  <h2 class="section-head">Discover the album for yourself!</h2>
+  <p>To discover this treasure for yourself, listen to a snippet of what’s to come:</p>
+  {% include audioplayer.html %}
+  <script type="text/javascript">
+    new AudioPlayer(new AudioSettings({ volume: 80, isLooping: false }), [
+        new Song("Sylvius", "Onwards and Upwards", "To Arcadia", 
+          "https://silasreinagel.sirv.com/LiteHtml5AudioPlayer/OnwardsAndUpwards.jpg", 
+          ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/OnwardsAndUpwards-SuperEarlyBird.mp3"])
+    ]);
+  </script>
+
+  <hr/>
+  <h2 class="section-head">How to experience more</h2>
+  <p>Were you enchanted by what you heard?</p>
+  <a class="order-button" href="/order">Pre-Order Now</a>  
+  <h3>You’ll receive exclusive access to:</h3>
+  <ul>
+    <li>Raw recordings</li>
+    <li>Bonus tracks</li>
+    <li>Early access to the songs</li>
+    <li>Wallpapers</li>
+    <li>And more!</li>
+  </ul>
+  <h3>You don’t want to miss this fantastic opportunity!</h3>
+
+  <hr/>
+  {% include email-subscribe.html %}
+</section>
