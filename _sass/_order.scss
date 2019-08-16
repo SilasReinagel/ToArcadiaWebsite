@@ -13,13 +13,16 @@
   border-radius: 3px;
   border: 0px;
   background-image: url("/images/order-button.jpg");
-  max-width: 220px;
-  margin: 0.5em auto 0.2em auto;
-  padding: 8px 32px;  
+  background-repeat: no-repeat;
+  max-width: 260px;
+  margin: 0.6em auto;
+  padding: 0.8em 1.4em;  
   transition-duration: 0.2s;
   font-family: $heading-font-family;
   font-size: $h3;
   color: #f6ff00;
+  line-height: 1em;
+  overflow: hidden;
 }
 
 .order-button:hover,

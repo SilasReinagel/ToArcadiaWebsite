@@ -20,6 +20,7 @@
 }
 
 .site-header .site-title {
+  font-family: $script-font-family;
   color: $site-color;
   font-size: $h2;
   margin: 0.5em 0.25em;
@@ -47,9 +48,10 @@
   color: $header-color;
   background-color: none;
   border-bottom: $header-border-bottom;
-  font-family: $script-font-family;
+  font-family: $heading-font-family;
   font-size: $h3;
-  font-weight: $script-font-weight;
+  font-weight: $heading-font-weight;
+  font-family: $ornate-font-family;
 }
 
 .site-nav a + a {

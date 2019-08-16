@@ -1,3 +1,7 @@
+.artists {
+  font-family: $script-font-family;
+}
+
 .artist .post {
   opacity: 1;
 }
@@ -5,18 +9,17 @@
 .artist .post p {
   font-size: 0.92em;
   letter-spacing: 0px;
+  font-family: $font-family;
 }
 
 .artist .post h4 {
   letter-spacing: 1px;
   margin-bottom: 1em;
-  font-family: $script-font-family;
   font-weight: $bold-font-weight;
 }
 
 .artist-fact p {
   margin-bottom: 0;
-  font-family: $heading-font-family;
   font-size: $h3;
   white-space: nowrap;
 }
@@ -30,18 +33,12 @@
   margin-bottom: auto;
 }
 
-.sylvius-bg-img {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+.artist .character {
+  margin-top: 1em;
 }
 
-.sylvius-bg-img img {
-  position: absolute;
-  bottom: 0;
-  width: auto;
-  height: inherit;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.4;
+.artist .artist-facts h1,
+.artist .artist-facts h2,
+.artist .artist-facts h3 {
+  font-family: $script-font-family;
 }

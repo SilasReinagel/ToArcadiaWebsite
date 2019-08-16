@@ -10,10 +10,12 @@
     border-width: 0px;
     transition: 0.2s;
     margin: 0.5em 0.25em;
-    padding: 0;
+    padding: 1em 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 $shadow;
   }
   
   #play-pause-button {

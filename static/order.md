@@ -5,7 +5,6 @@ permalink: order.html
 ---
 
 <section class="order">
-  <h1 class="title center mt2">Pre-Order</h1>
   <script src="https://gumroad.com/js/gumroad-embed.js"></script>
   <div class="white-bg m1 p1">
     <div class="gumroad-product-embed" data-gumroad-product-id="toarcadia-superearlybird">

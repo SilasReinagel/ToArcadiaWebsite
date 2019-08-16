@@ -5,10 +5,10 @@ permalink: artist.html
 ---
 
 <section class="artists">
-  <h1 class="title center mt2">Artists</h1>
+  <h1 class="title center mt2 script">Artists</h1>
   <div class="column">
     <section class="artist row no-wrap">
-      <div class="card white-bg mobile-hidden character px0 py0">
+      <div class="card artist-facts white-bg mobile-hidden character px0 py0">
         <div class="row artist-fact"><p><b>Name:</b> {{ site.author }}</p></div>
         <div class="row artist-fact"><p><b>Role:</b> Composer</p></div>
         <div class="row artist-fact"><p><b>Location:</b> Phoenix, AZ</p></div>
@@ -19,7 +19,7 @@ permalink: artist.html
       </div>
       <div class="card white-bg p2 post">
         <div class="mobile-only row">
-          <div class="column top">
+          <div class="artist-facts column top">
             <h2 class="bold mb2">{{ site.author }}</h2>
             <h3 class="mb0">Composer</h3>
           </div>
@@ -42,7 +42,7 @@ permalink: artist.html
           <div class="character-small">
             <img src="/images/charles.png" alt="Charles Szczepanek - Illustrated Portrait"/>
           </div>
-          <div class="column top text-right">
+          <div class="artist-facts column top text-right">
             <h2 class="bold mb2">Charles Szczepanek</h2>
             <h3 class="mb0">Pianist</h3>
           </div>
@@ -53,7 +53,7 @@ permalink: artist.html
         <p>Hailed by American Record Guide as whose “playing is bold, powerful, and agile,” Charles Szczepanek enjoys a multifaceted musical career.  He is a prizewinner in the Jacob Flier International Piano Competition, the Bösendorfer International Piano Competition, the Steinway Society of Chicago’s Most Promising Young Artist Competition, and of Arizona State University’s Concert of Soloists Competition.  He additionally has performed and been interviewed on National Public Radio around the United States.  He has appeared in concert at numerous halls including Gammage Auditorium and Katzin Concert Hall on the Arizona State University campus, the Hettenhausen Center for the Performing Arts in Lebanon, Illinois, the Performing Arts Center at Texas State University, and Harris Concert Hall at the University of Memphis, among many others.</p>
         <p>Szczepanek is the owner of Winding Road Studios, an audio production company specializing in classical music and film scoring.  Through Winding Road Studios, Szczepanek has collaborated with, engineered, and/or produced many of the nation’s top classical performers and ensembles including The Guarneri String Quartet, Antonio Pompa-Baldi, The Millennial Choral Organization, and The Arizona and Phoenix Opera Companies.</p>
       </div>
-      <div class="card white-bg mobile-hidden character px0 py0">
+      <div class="card artist-facts white-bg mobile-hidden character px0 py0">
         <div class="row artist-fact"><p><b>Name:</b> Charles Szczepanek</p></div>
         <div class="row artist-fact"><p><b>Role:</b> Pianist</p></div>
         <div class="row artist-fact"><p><b>Location:</b> Phoenix, AZ</p></div>
@@ -64,7 +64,7 @@ permalink: artist.html
       </div>
     </section>
     <section class="artist row no-wrap">
-      <div class="card white-bg mobile-hidden character px0 py0">
+      <div class="card artist-facts white-bg mobile-hidden character px0 py0">
         <div class="row artist-fact"><p><b>Name:</b> Johannes K Roots</p></div>
         <div class="row artist-fact"><p><b>Role:</b> Digital Artist</p></div>
         <div class="row artist-fact"><p><b>Location:</b> Estonia</p></div>
@@ -75,7 +75,7 @@ permalink: artist.html
       </div>
       <div class="card white-bg p2 post">
         <div class="mobile-only row">
-          <div class="column top">
+          <div class="artist-facts column top">
             <h2 class="bold mb2">Johannes K Roots</h2>
             <h3 class="mb0">Artist</h3>
           </div>

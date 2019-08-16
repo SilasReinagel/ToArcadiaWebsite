@@ -57,6 +57,10 @@ sup {
   text-decoration: underline;
 }
 
+.no-bullet li {
+  list-style-type: none;
+}
+
 @font-face {
 	font-family: 'HARRINGT';
 	src: url('/fonts/HARRINGT.eot');
