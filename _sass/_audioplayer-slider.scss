@@ -1,14 +1,14 @@
 :root {
   --slider-height: 6px;
-  --slider-width:100%;
+  --slider-width: 100%;
   --slider-border-width: 0px;
   --slider-border-color: #d5d5d5;
   --background-slider: #bbb;
   --background-filled-slider: #999;
-  --thumb-width: 0px;
-  --thumb-height: 1px;
-  --thumb-radius: 0%;
-  --thumb-background: #41bea8;
+  --thumb-width: 10px;
+  --thumb-height: 6px;
+  --thumb-radius: 0;
+  --thumb-background: #999;
   --thumb-border: 0px solid #777;
   --shadow-size: -8px;
   --fit-thumb-in-slider: -8px;  
@@ -32,10 +32,13 @@ input[type="range"]:active {
   outline: none;
 }
 
-input[type="range"]::-moz-focus-outer {
-  border: 0;
-}
+/* Webkit */
   
+input[type="range"]::-webkit-slider-runnable-track:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 input[type="range"]::-webkit-slider-runnable-track {
   background: var(--background-filled-slider);
   content: '';
@@ -45,16 +48,28 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
   
 input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  background: var(--thumb-background);
+  -webkit-appearance: none;
+  background-color: var(--thumb-background);
+  color: var(--thumb-background);
   border-radius: var(--thumb-radius);
-  margin-top: var(--fit-thumb-in-slider);
-  border: var(--thumb-border);
+  margin-top: 0px;
+  max-height: var(--thumb-height);
+  max-width: var(--thumb-width);
+  position: relative;
 }
 
-input[type="range"]::-webkit-slider-runnable-track:focus {
-  box-shadow: none;
-  outline: none;
+input[type="range"]::-webkit-progress-value {
+  -webkit-appearance: none;
+  height: var(--slider-height);
+  background: var(--background-filled-slider);
+  border: 0;
+  margin-top: 0;
+}
+
+/* Firefox */
+
+input[type="range"]::-moz-focus-outer {
+  border: 0;
 }
 
 input[type="range"]::-moz-range-track {
@@ -83,8 +98,10 @@ input[type="range"]::-moz-range-progress {
   margin-top: 0;
 }
 
+/* IE & Edge */
+
 input[type="range"]::-ms-track {
-  background: transparent;
+  background: var(--background-slider);
   border: 0;
   border-color: transparent;
   border-radius: 0;
@@ -93,6 +110,7 @@ input[type="range"]::-ms-track {
   height: var(--slider-height);
   margin-top: 10px;
   width: var(--slider-width);
+  min-width: var(--slider-width);
 }
 
 input[type="range"]::-ms-thumb {
