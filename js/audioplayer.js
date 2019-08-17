@@ -1,3 +1,6 @@
+const AudioPauseImg = '/images/audioplayer/pause.svg';
+const AudioPlayImg = '/images/audioplayer/play.svg';
+
 function AudioSettings({ volume, isLooping }) {
     this.volume = volume || 50;
     this.isLooping = isLooping || false;
@@ -17,7 +20,7 @@ function AudioPlayer(settings, songs) {
     this._album = new Text("album");
     this._playPause = new ImageButton("play-pause-button", () => {
         const isPlaying = this._audio.toggleState();
-        this._playPause.setImg(isPlaying ? "/images/audioplayer/pause.svg" : "/images/audioplayer/play.svg");
+        this._playPause.setImg(isPlaying ? AudioPauseImg : AudioPlayImg);
         if (isPlaying)
             ga('send', { hitType: 'event', eventCategory: 'song', eventAction: 'play', eventLabel: this._name.getText() })
     });
@@ -29,6 +32,7 @@ function AudioPlayer(settings, songs) {
         this._name.setText(song.name);
         this._album.setText(song.album);
     });
+    this._audio.addOnEndedListener(() => this._playPause.setImg(AudioPlayImg))
     document.getElementById('audio').classList.remove('hidden');
 }
 
@@ -45,11 +49,16 @@ function Audio(id, settings) {
             this._isPlaying = false;
     };
     this._element.ontimeupdate = () => {};
-    this._element.onended = () => {};
+    this._element.onended = () => this.reset();
 
     this.getDuration = () => this._element.duration;
     this.getCurrentTime = () => this._element.currentTime;
     this.isPlaying = () => this._isPlaying;
+
+    this.reset = () => {
+        this._isPlaying = false;
+        this._element.currentTime = 0;
+    }
 
     this.addDurationListener = (onDurationChange) => {
         let eventOriginal = this._element.ondurationchange;
