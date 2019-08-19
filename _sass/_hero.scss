@@ -1,0 +1,29 @@
+.hero {
+  padding: 2em;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/bg/DragonCave-1920x1280.jpg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  min-height: 86vh;
+  height: 86vh;
+
+  display: flex;
+
+  padding: 3em;
+}
+
+.hero-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.hero h1 {
+  font-size: 3.6em;
+  color: #fff;
+}
