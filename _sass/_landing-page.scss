@@ -17,9 +17,11 @@
 }
 
 #album-cover {
-  min-width: 76vw;
+  max-width: 60em;
+  width: 76vw;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
 }
 
 .landing-page .row p {
