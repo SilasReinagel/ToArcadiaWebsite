@@ -11,23 +11,67 @@
 
 .order-button {
   border-radius: 3px;
-  border: 0px;
-  background-image: url("/images/order-button.jpg");
+  border: 5px solid #1b817e;
+  background-color: #1b817e;
   background-repeat: no-repeat;
-  max-width: 260px;
+  max-width: 320px;
   margin: 0.6em auto;
-  padding: 0.8em 1.4em;  
+  padding: 0.8em 1.8em;  
   transition-duration: 0.2s;
   font-family: $heading-font-family;
   font-size: $h3;
-  color: #f6ff00;
-  line-height: 1em;
+  font-weight: $bold-font-weight;
+  color: #fff;
+  line-height: 1.5em;
   overflow: hidden;
+  box-shadow: 0 4px 8px 0 $shadow;
 }
 
 .order-button:hover,
 .order-button:active,
 .order-button:focus  {
-  background-image: url("/images/order-button-hover.jpg");
-  color: rgba(0,0,0,0);
+  background-color: #25bfbb;
+}
+
+
+@media screen and (max-width: $viewport-small) {
+  .order-button {
+    font-size: $h4;
+  }
+}
+
+.dark .order-button {
+  border: 5px solid #fff;
+  background-color: white;
+  color: #232323;
+}
+
+.dark .order-button:hover,
+.dark .order-button:active,
+.dark .order-button:focus  {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.light .order-button {
+  border: 5px solid #fff;
+  background-color: white;
+  color: #232323;
+}
+
+.light .order-button:hover,
+.light .order-button:active,
+.light .order-button:focus  {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.teal .order-button {
+  border: 5px solid #1b817e;
+  background-color: #1b817e;
+  color: #fff;
+}
+
+.teal .order-button:hover,
+.teal .order-button:active,
+.teal .order-button:focus  {
+  background-color: #25bfbb;
 }
