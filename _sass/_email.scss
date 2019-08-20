@@ -36,25 +36,3 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-.email-subscribe input[type=submit] {
-  height: 50px;
-  margin: 0.4em auto;
-  background-color: #58caef;
-  color: #fff;
-  padding: 0.7em 1em 1em 1em;
-  border: 2px solid #58caef;
-  border-radius: 4px;
-  min-width: 180px;
-  transition-duration: 0.2s;
-}
-
-.email-subscribe input[type=submit]:hover {
-  background-color: #3facd0;
-  border-color: #fff;
-}
-
-.email-subscribe input[type=submit]:active {
-  background-color: #3797b7;
-  border-color: #fff;
-}

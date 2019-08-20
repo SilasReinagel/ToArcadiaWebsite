@@ -1,0 +1,22 @@
+  
+<section class="hero dark hero-image center-all">
+  <div class="hero-content">
+    <h1 class="script mb4">... beautifully cinematic ...</h1>
+
+    {% include audioplayer.html %}
+    <script type="text/javascript">
+      new AudioPlayer(new AudioSettings({ volume: 100, isLooping: false }), [
+          new Song("Sylvius", "Onwards and Upwards", "To Arcadia", 
+            "https://silasreinagel.sirv.com/LiteHtml5AudioPlayer/OnwardsAndUpwards.jpg", 
+            ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/OnwardsAndUpwards-SuperEarlyBird.mp3"])
+      ]);
+    </script>
+    
+    <h4 class="mt3">Go on the uplifting musical adventure your soul longs for!</h4>
+
+    <div class="cta mt2">
+      <button class="order-button-light" onclick="window.location.href = '/order';">Pre-Order Now</button>  
+    </div>
+
+  </div>
+</section>
