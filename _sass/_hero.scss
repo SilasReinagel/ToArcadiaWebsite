@@ -13,7 +13,7 @@
   padding: 3em;
 }
 
-.hero-image .dark {
+.dark .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/bg/DragonCave-1920x1280.jpg') !important;
 }
 
@@ -25,8 +25,8 @@
   align-content: space-between;
 }
 
-.hero .dark h1,
-.hero .dark h4 {
+.dark .hero h1,
+.dark .hero  h4 {
   color: #fff !important;
 }
 
@@ -63,4 +63,8 @@
 
 .hero .text-bg .dark {
   background-color: $dark-gray;
+}
+
+.secondary-bg {
+  background-color: #e0f8f0;
 }

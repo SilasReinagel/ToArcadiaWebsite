@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: just_header
 title: "To Arcadia - Piano Album"
 permalink: index.html
 audio: false
@@ -7,7 +7,12 @@ featured-img: /images/album-title.jpg
 ---
 
 <div class="container" role="main">
-  <div class="column measure white-bg center">
-    {% include landing-page-copy.html %}
+  <div class="container column">
+    {% include hero.html %}
+  
+    <div class="column full-width center">
+      {% include landing-page-copy.html %}
+    </div>
   </div>
 </div>
+  

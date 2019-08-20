@@ -40,6 +40,18 @@
   }
 }
 
+.dark .order-button {
+  border: 5px solid #fff;
+  background-color: white;
+  color: #232323;
+}
+
+.dark .order-button:hover,
+.dark .order-button:active,
+.dark .order-button:focus  {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .light .order-button {
   border: 5px solid #fff;
   background-color: white;
@@ -50,4 +62,16 @@
 .light .order-button:active,
 .light .order-button:focus  {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.teal .order-button {
+  border: 5px solid #1b817e;
+  background-color: #1b817e;
+  color: #fff;
+}
+
+.teal .order-button:hover,
+.teal .order-button:active,
+.teal .order-button:focus  {
+  background-color: #25bfbb;
 }

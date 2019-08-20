@@ -48,3 +48,14 @@
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+
+.transparent-white {
+  filter: invert(.5) brightness(1.2);
+  opacity: 0.72;
+}
+
+.down-arrow {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
