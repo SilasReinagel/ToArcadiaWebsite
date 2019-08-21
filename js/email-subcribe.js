@@ -49,5 +49,4 @@ const initEmail = () =>
     };
 };
 
-
 addToOnLoad(initEmail);

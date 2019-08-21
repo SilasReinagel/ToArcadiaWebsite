@@ -129,6 +129,8 @@
     margin-bottom: 0.5em;
     list-style-type: none;
     counter-reset: none;
+    display: flex;
+    flex-direction: column;
   }
   
   #audio #playlist li {

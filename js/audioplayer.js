@@ -32,7 +32,8 @@ function AudioPlayer(settings, songs) {
         this._name.setText(song.name);
         this._album.setText(song.album);
     });
-    this._audio.addOnEndedListener(() => this._playPause.setImg(AudioPlayImg))
+    this._audio.addOnEndedListener(() => this._playPause.setImg(AudioPlayImg));
+    this._audio.addOnPlayListener(() => this._playPause.setImg(AudioPauseImg));
     document.getElementById('audio').classList.remove('hidden');
 }
 
@@ -75,6 +76,14 @@ function Audio(id, settings) {
             onTimeUpdate();
         }
     };
+
+    this.addOnPlayListener = (onPlay) => {
+        let eventOriginal = this._element.onplay;
+        this._element.onplay = () => {
+            eventOriginal();
+            onPlay();
+        }
+    }
 
     this.addOnEndedListener = (onEnded) => {
         let eventOriginal = this._element.onended;
