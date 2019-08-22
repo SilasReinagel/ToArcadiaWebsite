@@ -46,17 +46,17 @@ const initEarlyLogin = () =>
     setVisibility('playlist', true);
     new AudioPlayer(new AudioSettings({ volume: 100, isLooping: false }), [
       new Song("Sylvius", "1 - Our Adventure Begins", "Here With Me", 
-        "//images/here-with-me-cover-art.jpg", 
+        "/images/here-with-me-cover-art.jpg", 
         ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/01_Our_Adventure_Begins.mp3"]),
       new Song("Sylvius", "2 - Moment of Beauty", "Here With Me",  
-        "//images/here-with-me-cover-art.jpg", 
+        "/images/here-with-me-cover-art.jpg", 
         [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/02_Moment_of_Beauty.mp3"]),
-        new Song("Sylvius", "3 - Here With Me", "Here With Me",  
-          "//images/here-with-me-cover-art.jpg", 
-          [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/03_Here_With_Me.mp3"]),
-        new Song("Sylvius", "4 - Onwards and Upwards", "Here With Me",  
-          "//images/here-with-me-cover-art.jpg", 
-          [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/04_Onwards_and_Upwards.mp3"])
+      new Song("Sylvius", "3 - Here With Me", "Here With Me",  
+        "/images/here-with-me-cover-art.jpg", 
+        [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/03_Here_With_Me.mp3"]),
+      new Song("Sylvius", "4 - Onwards and Upwards", "Here With Me",  
+        "/images/here-with-me-cover-art.jpg", 
+        [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/04_Onwards_and_Upwards.mp3"])
     ]);
   }
 
