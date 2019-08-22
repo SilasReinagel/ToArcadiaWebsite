@@ -49,3 +49,5 @@ const postJson = (url, data) =>
             else
                 throw Error(`Request rejected with status ${res.status}`);
         });
+
+const onEmailSubcribe = () => ga('send', { hitType: 'event', eventCategory: 'email', eventAction: 'subscribe', eventLabel: 'Pre-Order Campaign' });

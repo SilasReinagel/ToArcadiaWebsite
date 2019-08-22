@@ -12,28 +12,30 @@ const makeLocalStorageIo = (key) => ({
             localStorage.setItem(key, item);
             resolve(item);
         })
-})
+});
 
-const initEmail = () =>
-{
-    const localStorageEmailKey = 'email-subscription';
-    const jsonIo = makeJsonIo('6380571bd577406dfe41765b0c8d3b8cb6696338b988384cbda117ba589d5acc');
-    const localStorageIo = makeLocalStorageIo(localStorageEmailKey);
 
-    const updateEmailVisibility = () => {
-        const hasEmailSubscribed = !!localStorage.getItem(localStorageEmailKey);        
-        setVisibility('email-signup', !hasEmailSubscribed);
-        setVisibility('email-supporter', hasEmailSubscribed);
-        setVisibility('email', true);
-    }
+const localStorageEmailKey = 'email-subscription';
+const jsonIo = makeJsonIo('6380571bd577406dfe41765b0c8d3b8cb6696338b988384cbda117ba589d5acc');
+const localStorageIo = makeLocalStorageIo(localStorageEmailKey);
+const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+const updateEmailVisibility = () => {
+    const hasEmailSubscribed = !!localStorage.getItem(localStorageEmailKey);        
+    setVisibility('email-signup', !hasEmailSubscribed);
+    setVisibility('email-supporter', hasEmailSubscribed);
+    setVisibility('email', true);
+};
 
-    const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+const initEmailCustomEmailIfPresent = () => {
+    if (!byId('submit-email'))
+        return;
+
     const subscribe = (email) => 
         jsonIo
             .put({ subscribedAt: new Date().getTime(), email: email, subscribed: true })
             .then(item => localStorageIo.put(item))
             .then(_ => updateEmailVisibility())    
-            .then(_ => ga('send', { hitType: 'event', eventCategory: 'email', eventAction: 'subscribe', eventLabel: 'Pre-Order Campaign' }))
+            .then(_ => onEmailSubcribe())
             .catch(_ => console.log('Subscription failed'));
 
     updateEmailVisibility();
@@ -49,4 +51,30 @@ const initEmail = () =>
     };
 };
 
-addToOnLoad(initEmail);
+const initMailChimpEmailIfPresent = () => {
+    if (!byId('mc-embedded-subscribe')) 
+        return;
+
+    const subscribe = (email) => 
+        jsonIo
+            .put({ subscribedAt: new Date().getTime(), email: email, subscribed: true })
+            .then(item => localStorageIo.put(item))
+            .then(_ => updateEmailVisibility())    
+            .then(_ => onEmailSubcribe())
+            .catch(_ => console.log('Subscription failed'));
+
+    updateEmailVisibility();
+    byId('mc-embedded-subscribe').onclick = function(e) {
+        const emailInput = byId('mce-EMAIL');
+        const email = emailInput.value;
+        const emailIsValid = validateEmail(email);
+        setValidationStatus(emailInput, emailIsValid);
+        if (emailIsValid) 
+            subscribe(email);
+        else
+            e.preventDefault();
+    };
+}
+
+addToOnLoad(initEmailCustomEmailIfPresent);
+addToOnLoad(initMailChimpEmailIfPresent);
