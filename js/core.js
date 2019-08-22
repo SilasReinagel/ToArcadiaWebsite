@@ -11,6 +11,7 @@ const setVisibility = (id, shouldShow) => {
   const e = byId(id);
   e.style.display = displayStyle(shouldShow);
   e.style.visibility = visibilityStyle(shouldShow);
+  e.classList.remove('hidden');
 }
 
 const setValidationStatus = (e, isValid) => {

@@ -25,7 +25,9 @@ const initEarlyLogin = () =>
   const isValid = (loginHash) => {
     const v = val(loginHash);
     output({ loginHash, v });
-    return loginHash && loginHash.length > 36 && v % 31 == 0;
+    const result = (loginHash || '').length > 36 && (v % 31 == 0);
+    output({ result });
+    return result;
   }
 
   const updateVisibility = () => {
