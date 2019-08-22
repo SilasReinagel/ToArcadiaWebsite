@@ -1,4 +1,4 @@
-const isLoginDebug = false;
+const isLoginDebug = true;
 const output = (o) => { if (isLoginDebug) console.log(o)};
 const makeLocalStorageIo = (key) => ({
   get: () => localStorage.getItem(key),
@@ -45,12 +45,18 @@ const initEarlyLogin = () =>
     activated = true;
     setVisibility('playlist', true);
     new AudioPlayer(new AudioSettings({ volume: 100, isLooping: false }), [
-      new Song("Sylvius", "Onwards and Upwards", "To Arcadia", 
-        "https://silasreinagel.sirv.com/LiteHtml5AudioPlayer/OnwardsAndUpwards.jpg", 
-        ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/OnwardsAndUpwards-SuperEarlyBird.mp3"]),
-      new Song("Sylvius", "Onwards and Upwards", "To Arcadia", 
-        "https://silasreinagel.sirv.com/LiteHtml5AudioPlayer/OnwardsAndUpwards.jpg", 
-      [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/OnwardsAndUpwards-SuperEarlyBird.mp3"])
+      new Song("Sylvius", "1 - Our Adventure Begins", "Here With Me", 
+        "//images/here-with-me-cover-art.jpg", 
+        ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/01_Our_Adventure_Begins.mp3"]),
+      new Song("Sylvius", "2 - Moment of Beauty", "Here With Me",  
+        "//images/here-with-me-cover-art.jpg", 
+        [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/02_Moment_of_Beauty.mp3"]),
+        new Song("Sylvius", "3 - Here With Me", "Here With Me",  
+          "//images/here-with-me-cover-art.jpg", 
+          [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/03_Here_With_Me.mp3"]),
+        new Song("Sylvius", "4 - Onwards and Upwards", "Here With Me",  
+          "//images/here-with-me-cover-art.jpg", 
+          [ "https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/04_Onwards_and_Upwards.mp3"])
     ]);
   }
 
@@ -65,7 +71,14 @@ const initEarlyLogin = () =>
     output({ loginSucceeded });
     // TODO: Feedback on bad login;
     if (loginSucceeded) 
-      credentials.put(loginHash);
+    {
+      credentials.put(loginHash)
+        .then(_ => ga('send', { hitType: 'event', eventCategory: 'early-access-login', eventAction: 'succeeded', eventLabel: loginHash }));
+    }
+    else 
+    {
+      ga('send', { hitType: 'event', eventCategory: 'early-access-login', eventAction: 'failed', eventLabel: loginHash })
+    }
     
     updateVisibility();
   };
