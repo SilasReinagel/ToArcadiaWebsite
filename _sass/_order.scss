@@ -9,6 +9,7 @@
   margin: auto;
 }
 
+a .order-button,
 .order-button {
   border-radius: 3px;
   border: 5px solid #1b817e;
@@ -27,10 +28,15 @@
   box-shadow: 0 4px 8px 0 $shadow;
 }
 
+a .order-button:hover,
+a .order-button:active,
+a .order-button:focus,
 .order-button:hover,
 .order-button:active,
 .order-button:focus  {
   background-color: #25bfbb;
+  color: #fff;
+  border: 5px solid #1b817e;
 }
 
 
