@@ -226,7 +226,8 @@ function SongProgress(audio) {
 
     const formatSeconds = (seconds) => Math.round(seconds % 60).toString().padStart(2, '0');
     const formatMinutes = (seconds) => Math.floor(seconds / 60).toString().padStart(2, '0');
-    const formatTime = (timeInSeconds) => `${formatMinutes(timeInSeconds)}:${formatSeconds(timeInSeconds)}`;
+    const formatTime = (timeInSeconds) => `${formatMinutes(zeroIfUndefined(timeInSeconds))}:${formatSeconds(zeroIfUndefined(timeInSeconds))}`;
+    const zeroIfUndefined = (num) => num || 0;
     this._toReadableTime = (currentSeconds, maxSeconds) => `${formatTime(currentSeconds)} / ${formatTime(maxSeconds)}`;
 }
 
@@ -272,8 +273,12 @@ function Playlist(songs, audio, onSongChange) {
     audio.addOnEndedListener(() => {
         if (this._songIndex !== songs.length - 1)
             this._changeSong(this._songIndex + 1);
-        else if (this._isLooping)
-            this._changeSong(0);
+        else 
+        {
+            this.selectSong(0);
+            if (this._isLooping)
+                audio.play();
+        }
     });
     this._songIndex = -1;
     this._isLooping = false;
