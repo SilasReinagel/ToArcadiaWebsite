@@ -1,0 +1,17 @@
+  
+<section class="hero light ep-hero-image center-all column">
+  <div class="hero-content">
+    <h1 class="script mt4 mb4">heartfelt piano</h1>
+    {% include audioplayer.html %}
+  </div>
+  <img class="mt8 down-arrow transparent-white" src="/images/arrow-down.svg" 
+    onclick="document.getElementById('landing-copy').scrollIntoView({ behavior: 'smooth' })" />
+</section>
+
+<script type="text/javascript">
+  new AudioPlayer(new AudioSettings({ volume: 100, isLooping: false }), [
+      new Song("Sylvius", "Moment Of Beauty", "Here With Me", 
+        "/images/here-with-me-cover-art.jpg", 
+        ["https://sylvius-piano-songs.s3-us-west-1.amazonaws.com/HereWithMeEP/02_Moment_of_Beauty.mp3"])
+  ]);
+</script>

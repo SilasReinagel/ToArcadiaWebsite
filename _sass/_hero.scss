@@ -16,6 +16,16 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/bg/DragonCave-1920x1280.jpg') !important;
 }
 
+.ep-hero-image {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.0)), url('/images/bg/PianoMeadow-1920x1280.jpg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  min-height: 86vh;
+  height: 86vh;
+}
+
 .hero-content {
   margin-left: auto;
   margin-right: auto;
@@ -66,4 +76,8 @@
 
 .secondary-bg {
   background-color: #e0f8f0;
+}
+
+.ep .secondary-bg {
+  background-color: #d1f2b5;
 }
