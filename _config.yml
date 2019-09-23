@@ -44,7 +44,7 @@ facebook_comments_number: 10
 github_username: 
 bitbucket_username:
 stackoverflow_id: 
-twitter_username: 
+twitter_username: sylviuspiano
 skype_username:
 steam_nickname:
 google_plus_id:
@@ -54,6 +54,9 @@ medium_id:
 bitcoin_url:
 paypal_url:
 flattr_button:
+facebook_username: sylviuspiano
+instagram_username: sylviuspianist
+spotify_url: https://open.spotify.com/artist/74XGqHW5VCr1iKrBFDruYH?si=76uJBvkhR4yR5oftahX6hA
 
 # Post sharing icons
 show_sharing_icons: true

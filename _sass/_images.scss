@@ -50,12 +50,18 @@
 }
 
 .transparent-white {
-  filter: invert(.5) brightness(1.2);
-  opacity: 0.72;
+  filter: invert(.5) brightness(3);
+  opacity: 0.85;
 }
 
 .down-arrow {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: auto;
   cursor: pointer;
+}
+
+@media screen and (max-width: $viewport-small) { 
+  .down-arrow  {
+    width: 32px;
+  }
 }

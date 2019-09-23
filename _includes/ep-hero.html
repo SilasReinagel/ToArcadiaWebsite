@@ -4,7 +4,10 @@
     <h1 class="script mt4 mb4">heartfelt piano</h1>
     {% include audioplayer.html %}
   </div>
-  <img class="mt8 down-arrow transparent-white" src="/images/arrow-down.svg" 
+  <section id="links" class="mt6">
+    {% include social_links.html %}
+  </section>
+  <img class="mt0 down-arrow transparent-white" src="/images/arrow-down.svg" 
     onclick="document.getElementById('landing-copy').scrollIntoView({ behavior: 'smooth' })" />
 </section>
 
