@@ -54,3 +54,8 @@ const onEmailSubcribe = () => ga('send', { hitType: 'event', eventCategory: 'ema
 const onOrderButtonClick = () => ga('send', { hitType: 'event', eventCategory: 'order', eventAction: 'click', eventLabel: 'Order Button' });
 const onOrderNavLinkClick = () => ga('send', { hitType: 'event', eventCategory: 'order', eventAction: 'click', eventLabel: 'Order Nav Link' });
 const onSpotifyLinkClick = () => ga('send', { hitType: 'event', eventCategory: 'visit', eventAction: 'spotify', eventLabel: 'Visit Spotify' });
+
+const orderHereWithMe = () => { 
+    onOrderButtonClick(); 
+    window.location.href = 'https://gumroad.com/l/here-with-me/launch-special';
+};
