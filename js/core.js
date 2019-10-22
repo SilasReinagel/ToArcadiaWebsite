@@ -57,5 +57,4 @@ const onSpotifyLinkClick = () => ga('send', { hitType: 'event', eventCategory: '
 
 const orderHereWithMe = () => { 
     onOrderButtonClick(); 
-    window.location.href = 'https://gumroad.com/l/here-with-me';
 };

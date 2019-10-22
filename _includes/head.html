@@ -32,12 +32,12 @@
 
     <!-- Domain verification -->
     <meta name="p:domain_verify" content="1f1ca0fefd6f1d69fd24bcfe2beff687"/>
-
-    {% if page.audio ||= false %}
-    {% endif%}
-    
+   
     <!-- JS -->
     <script defer src="/js/core.js"></script>  
+
+    <!-- Gumroad Order -->
+    <script defer src="https://gumroad.com/js/gumroad.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/pixyll.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}" type="text/css">
