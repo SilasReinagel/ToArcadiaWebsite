@@ -1,6 +1,6 @@
 ---
 layout: just_header
-title: "Pre-Order"
+title: "Buy"
 permalink: order.html
 album: "Here With Me"
 ---

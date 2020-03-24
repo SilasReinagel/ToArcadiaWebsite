@@ -50,7 +50,7 @@ const postJson = (url, data) =>
                 throw Error(`Request rejected with status ${res.status}`);
         });
 
-const onEmailSubcribe = () => ga('send', { hitType: 'event', eventCategory: 'email', eventAction: 'subscribe', eventLabel: 'Pre-Order Campaign' });
+const onEmailSubcribe = () => ga('send', { hitType: 'event', eventCategory: 'email', eventAction: 'subscribe', eventLabel: 'Email Campaign' });
 const onOrderButtonClick = () => ga('send', { hitType: 'event', eventCategory: 'order', eventAction: 'click', eventLabel: 'Order Button' });
 const onOrderNavLinkClick = () => ga('send', { hitType: 'event', eventCategory: 'order', eventAction: 'click', eventLabel: 'Order Nav Link' });
 const onSpotifyLinkClick = () => ga('send', { hitType: 'event', eventCategory: 'visit', eventAction: 'spotify', eventLabel: 'Visit Spotify' });
